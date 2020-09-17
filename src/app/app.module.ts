@@ -12,6 +12,7 @@ import { DetalleUsuarioComponentComponent } from './pages/user/detalle-usuario-c
 import { DetalleRecursoComponentComponent } from './pages/resource/detalle-recurso-component/detalle-recurso-component.component';
 import { ListadoRecursosComponentComponent } from './pages/resource/listado-recursos-component/listado-recursos-component.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponentComponent } from './pages/register/register-component/register-component.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     DetalleUsuarioComponentComponent,
     DetalleRecursoComponentComponent,
     ListadoRecursosComponentComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterComponentComponent
   ],
   imports: [
     BrowserModule,

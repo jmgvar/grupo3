@@ -25,4 +25,7 @@ export class LoginComponentComponent implements OnInit {
       window.alert ('¡El usuario ' + this.usuario.email + ' no existe!');
     }
   }
+  register(): void{
+    this.router.navigate(['register'])
+  } 
 }
