@@ -17,19 +17,19 @@
                         <th scope="col">Color</th>
                         <th scope="col">Valor Pantone</th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>fuchsia rose</td>
-                        <td>2001</td>
-                        <td>#C74375</td>
-                        <td>@17-2031</td>
-                        <td><i class="fa fa-trash" aria-hidden="true"></i></td>
-                        <td><i class="fas fa-edit"></i></td>
+                    <ng-container *ngFor="let recurso of recursos">
+                        <tr>
+                        <th scope="row">{{recurso.id}}</th>
+                        <td>{{recurso.name}}</td>
+                        <td>{{recurso.year}}</td>
+                        <td>{{recurso.color}}</td>
+                        <td>{{recurso.pantone_value}}</td>
+                        <td><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;<i class="fas fa-edit"></i></td>
                     </tr>
+                    </ng-container>
                 </tbody>
             </table>
         </div>
