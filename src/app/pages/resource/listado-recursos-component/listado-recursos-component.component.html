@@ -6,8 +6,8 @@
 <div class="container">
     <div class="row">
 
-        <div class="col">
-            <h1>Listado Recursos</h1>
+        <div class="col-8">
+            <h1 class="text-center">Listado Recursos</h1>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -21,17 +21,34 @@
                 </thead>
                 <tbody>
                     <ng-container *ngFor="let recurso of recursos">
-                        <tr>
-                        <th scope="row">{{recurso.id}}</th>
+                    <tr>
+                        <th scope="row"><a [routerLink]="['detail', recurso.id]">{{recurso.id}}</a></th>
                         <td>{{recurso.name}}</td>
                         <td>{{recurso.year}}</td>
-                        <td>{{recurso.color}}</td>
+                        <td class="inline">{{recurso.color}} <div style="float:right; width: 20px; height: 20px; background:{{recurso.color}};"></div></td>
                         <td>{{recurso.pantone_value}}</td>
-                        <td><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;<i class="fas fa-edit"></i></td>
+                        <td class="text-right">
+                            <a class="btn btn-danger mr-1" href="#" role="button" (click)=deleteResource(recurso.id) ><i class="fas fa-trash-alt"></i></a>  
+                            <a class="btn btn-primary" href="#" role="button"><i class="fas fa-edit"></i></a>
+                        </td>
                     </tr>
                     </ng-container>
                 </tbody>
             </table>
+
+            <!-- Paginación -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1 </a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-4">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

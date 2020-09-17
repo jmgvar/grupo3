@@ -14,9 +14,8 @@ export class ServicioRecursoService {
 
   
 
-
-  get(id: String) {
-    this.http.get(environment.reqresApi+'unknown/'+id);
+  getRecurso(id: string) {
+    return this.http.get(environment.reqresApi+'unknown/'+id);
   }
 
   getAll(): Observable<any>{
