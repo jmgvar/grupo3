@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'grupo3';
+  title = 'Grupo 3 (GARCIA LEON Rafael, LOSADA RODRIGUEZ Victor, JIMENEZ JURADO Miguel Jesus y Simione Gilio)';
 }
