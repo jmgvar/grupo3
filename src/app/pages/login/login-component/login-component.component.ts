@@ -19,7 +19,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   login(): void{
-    if(this.authService.login('eve.holt@reqres.in')==true){
+    if(this.authService.login(this.usuario.email)==true){
       this.router.navigate(['users'])
     }else{
       window.alert ('¡El usuario ' + this.usuario.email + ' no existe!');
