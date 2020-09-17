@@ -30,4 +30,5 @@ export class ServicioUsuarioService {
   delete(id: String){
     return this.http.delete(environment.reqresApi+'users/'+id);
   }
+
 }
