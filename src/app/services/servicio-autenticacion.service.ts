@@ -16,6 +16,7 @@ export class ServicioAutenticacionService {
 
   login(email:string):boolean {
     let found = false;
+    console.log(this.usuarios);
     this.usuarios.forEach(usuario => {
       if(usuario.email===email){
         found=true;
@@ -23,4 +24,6 @@ export class ServicioAutenticacionService {
     });
     return found;
   }
+
+  register
 }

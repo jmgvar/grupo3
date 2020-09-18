@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './pages/login/login-component/login-component.component';
 import { ListadoUsuariosComponentComponent } from './pages/user/listado-usuarios-component/listado-usuarios-component.component';
@@ -13,7 +12,6 @@ import { DetalleRecursoComponentComponent } from './pages/resource/detalle-recur
 import { ListadoRecursosComponentComponent } from './pages/resource/listado-recursos-component/listado-recursos-component.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponentComponent } from './pages/register/register-component/register-component.component';
-
 
 @NgModule({
   declarations: [
@@ -36,3 +34,5 @@ import { RegisterComponentComponent } from './pages/register/register-component/
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

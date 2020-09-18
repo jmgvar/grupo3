@@ -7,7 +7,7 @@
     <div class="row">
 
         <div class="col">
-            <h1>Listado Usuarios</h1>
+            <h1>Listado Usuarios</h1><button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="addUser()">Alta Usuario</button>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -21,25 +21,57 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <ng-container *ngFor="let usuario of listaUsuarios">
-                        <tr>
-                            <th scope="row">{{ usuario.id }}</th>
-                            <td><img src="{{ usuario.avatar }}" width="50px" class="img-fluid rounded-circle"></td>
-                            <td>{{ usuario.first_name }}</td>
-                            <td>{{ usuario.last_name }}</td>
-                            <td>{{ usuario.email }}</td>
-                            <td><i class="fa fa-trash" aria-hidden="true"></i></td>
-                            <td><i class="fas fa-edit"></i></td>
-                        </tr>
-                    </ng-container>
+                    <!--ng-container *ngFor="let usuario of listaUsuarios"-->
+                    <tr *ngFor="let usuario of listaUsuarios">
+                        <th scope="row">{{ usuario.id }}</th>
+                        <td><img src="{{ usuario.avatar }}" width="50px" class="img-fluid rounded-circle"></td>
+                        <td>{{ usuario.first_name }}</td>
+                        <td>{{ usuario.last_name }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+                        <td><i class="fas fa-edit" (click)="userDetails(usuario)"></i></td>
+                    </tr>
+                    <!--/ng-container-->
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <!--<app-detalle-usuario-component></app-detalle-usuario-component>-->
+<!--ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-</div>
+    <div class="container">
+        <section id="team" class="pb-5">
+            <div class="container">
+                <h5 class="section-title h1">{{usuario.first_name}} {{usuario.last_name}}</h5>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid" src="{{usuario.avatar}}" alt="card image"></p>
+                                            <h4 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h4>
+                                            <p class="card-text">{{usuario.email}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</ng-template-->
+<!--div class="container">
+    <div class="row">
+        <app-detalle-usuario-component></app-detalle-usuario-component>
+    </div>
+</div-->
