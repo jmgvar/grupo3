@@ -13,18 +13,20 @@ export class ListadoRecursosComponentComponent implements OnInit {
   constructor(private recursoService: ServicioRecursoService) { }
 
   recursos: Observable<any[]>;
+  recursoInicial: Recurso;
 
   ngOnInit(): void {
     this.recursoService.getAll().subscribe(data => {
       this.recursos = data['data'];
       console.log(this.recursos)
     });
+    // Inicializamos el recurso
+    this.recursoInicial = new Recurso();
   }
 
   deleteResource(id:String):void {  
-    if (window.confirm("¿Está seguro que desea eliminar el registro?")) {
+    
       alert(id)
-    }
   }
 
 }
