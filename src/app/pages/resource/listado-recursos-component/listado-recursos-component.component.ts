@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Recurso } from "../../../model/recurso";
 import { ServicioRecursoService} from "../../../services/servicio-recurso.service"
@@ -10,10 +11,14 @@ import { ServicioRecursoService} from "../../../services/servicio-recurso.servic
 })
 export class ListadoRecursosComponentComponent implements OnInit {
 
-  constructor(private recursoService: ServicioRecursoService) { }
+  
+  constructor(private recursoService: ServicioRecursoService, private router: Router) {
+  
+   }
 
   recursos: Observable<any[]>;
   recursoInicial: Recurso;
+  
 
   ngOnInit(): void {
     this.recursoService.getAll().subscribe(data => {
@@ -29,4 +34,7 @@ export class ListadoRecursosComponentComponent implements OnInit {
       alert(id)
   }
 
+  recursoDetails(tableRow: any) {
+    this.router.navigateByUrl('/detail', { state: tableRow});
+  }
 }
