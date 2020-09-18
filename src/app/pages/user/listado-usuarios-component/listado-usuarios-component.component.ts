@@ -1,9 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { ServicioUsuarioService } from 'src/app/services/servicio-usuario.service';
+import {environment} from '../../../../environments/environment'
 //import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 //import { DetalleUsuarioComponentComponent } from '../detalle-usuario-component/detalle-usuario-component.component';
 import {Router} from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-listado-usuarios-component',
@@ -13,9 +15,9 @@ import {Router} from "@angular/router";
 export class ListadoUsuariosComponentComponent implements OnInit {
   //modalReference: NgbModalRef;
   listaUsuarios: Array<Usuario> = [];
-    
+  usuario: Usuario;
   //constructor(private userService: ServicioUsuarioService,private modalService: NgbModal, private router: Router) { 
-  constructor(private userService: ServicioUsuarioService, private router: Router) { 
+  constructor(private http: HttpClient,private userService: ServicioUsuarioService, private router: Router) { 
     userService.getAll().subscribe(data => 
         this.listaUsuarios = data['data']);
   }
@@ -57,6 +59,10 @@ export class ListadoUsuariosComponentComponent implements OnInit {
   addUser() {
     let usuario = new Usuario();
     this.router.navigateByUrl('/userDetails', { state: usuario});
+  }
+  deleteUser(tableRow: any) {
+    this.usuario = tableRow;
+    this.http.delete(environment.reqresApi+'users/'+this.usuario.id);
   }
 
 }
