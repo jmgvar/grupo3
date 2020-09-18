@@ -12,11 +12,8 @@ const routes: Routes = [
       { path: 'users', component: ListadoUsuariosComponentComponent},
       { path: 'userDetails', component: DetalleUsuarioComponentComponent},
       { path: 'register', component: RegisterComponentComponent},
-      { path: 'resources', component: ListadoRecursosComponentComponent,
-        children: [
-          { path: 'detail/:id', component: DetalleRecursoComponentComponent}
-        ]
-      }
+      { path: 'resources', component: ListadoRecursosComponentComponent},
+      { path: 'detail', component: DetalleRecursoComponentComponent}
     ];
 
 @NgModule({

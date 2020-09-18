@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recurso } from 'src/app/model/recurso';
 import { ServicioRecursoService } from 'src/app/services/servicio-recurso.service';
 
@@ -10,19 +11,18 @@ import { ServicioRecursoService } from 'src/app/services/servicio-recurso.servic
 })
 export class DetalleRecursoComponentComponent implements OnInit {
 
-  recurso: Recurso = new Recurso();
+  recurso: Recurso;
 
-  constructor(private recursoService: ServicioRecursoService, private route: ActivatedRoute) {
-    console.log('Detalle Recurso');
-    const recursoId = route.snapshot.paramMap.get('id');
-    recursoService.getRecurso(recursoId).subscribe(data => {
-      this.recurso = data['data'];
-      console.log(this.recurso);
-    });
 
+
+   constructor(private http: HttpClient,private router:Router) { 
+     console.log(this.router.getCurrentNavigation().extras.state);
+   }
+ 
+   ngOnInit(): void {
+     this.recurso=history.state;
    }
 
-  ngOnInit(): void {
-  }
+
 
 }

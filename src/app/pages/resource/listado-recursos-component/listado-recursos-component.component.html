@@ -28,8 +28,8 @@
                         <td class="inline">{{recurso.color}} <div style="float:right; width: 20px; height: 20px; background:{{recurso.color}};"></div></td>
                         <td>{{recurso.pantone_value}}</td>
                         <td class="text-right">
-                            <a class="btn btn-danger mr-1" href="#" role="button" (click)=deleteResource(recurso.id) ><i class="fas fa-trash-alt"></i></a>  
-                            <a class="btn btn-primary" href="#" role="button"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger mr-1" role="button" (click)=deleteResource(recurso.id) ><i class="fas fa-trash-alt"></i></a>  
+                            <a class="btn btn-primary" role="button" (click)="recursoDetails(recurso)"><i class="fas fa-edit"></i></a>
                         </td>
                     </tr>
                     </ng-container>
