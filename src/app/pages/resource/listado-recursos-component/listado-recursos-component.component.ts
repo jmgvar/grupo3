@@ -21,4 +21,10 @@ export class ListadoRecursosComponentComponent implements OnInit {
     });
   }
 
+  deleteResource(id:String):void {  
+    if (window.confirm("¿Está seguro que desea eliminar el registro?")) {
+      alert(id)
+    }
+  }
+
 }

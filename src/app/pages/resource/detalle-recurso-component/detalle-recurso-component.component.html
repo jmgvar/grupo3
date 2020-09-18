@@ -1,1 +1,22 @@
-<p>detalle-recurso-component works!</p>
+<h5 class="section-title h1 text-center">Detalle Recurso</h5>
+<div class="row">
+    <!-- Team member -->
+    <div class="col">
+        <div class="frontside">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div
+                        style="margin: auto; border-radius: 50%; width: 50px; height: 50px; background:{{recurso.color}};">
+                    </div>
+                    <h4 class="card-title">{{recurso.name}}</h4>
+                    <p class="card-text text-left"><strong>Id: </strong>{{recurso.id}}</p>
+                    <p class="card-text text-left"><strong>Color: </strong>{{recurso.color}}</p>
+                    <p class="card-text text-left"><strong>Pantone: </strong>{{recurso.pantone_value}}</p>
+                    <p class="card-text text-left"><strong>Año: </strong>{{recurso.year}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
